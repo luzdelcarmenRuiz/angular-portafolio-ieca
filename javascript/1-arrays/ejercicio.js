@@ -37,7 +37,13 @@ function vaciarCarritoConTotal() {
         },
     ];
 
-    // Completa aquí código de escenario 1
+    const total = carrito.reduce(
+        (accumulator, producto, currentIndex, array) => {
+           accumulator = accumulator + producto.precio;
+           return (accumulator);
+        }, 
+        0);
+        console.log(total);
 }
 
 /*
