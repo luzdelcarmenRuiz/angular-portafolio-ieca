@@ -62,6 +62,8 @@ function cuentaDeAlumnos() {
     const grupoB = ["Alejandro Ruiz","Carmen Ortega","Roberto Mendoza","Patricia Vargas","Eduardo Morales","Olga Reyes","Gustavo Paredes","Natalia Soto","Hector Delgado","Monica Castillo","Raul Rios","Raquel Valdez","Fernando Acosta","Silvia Castro","Manuel Vega","Lourdes Guzman","Jorge Navarro"]
 
     // Completa aquí código de Escenario 2
+    const grupoUnico = [...grupoA, ...grupoB];
+    console.log(grupoUnico.length);
 }
 
 /*
