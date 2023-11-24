@@ -11,7 +11,7 @@
     </div>
     <div style="display: flex">
         <button id="btnActualizacion" onClick="modificarEncabezado()" style="margin-right: 10px">Establecer Encabezado</button>
-        <button id="btnUndo" disabled>Encabezado Anterior</button>
+        <button id="btnUndo" onClick="callback1()" disabled>Encabezado Anterior</button>
     </div>
     <h1 id="encabezado">...</h1>
 
@@ -35,11 +35,49 @@
         */
 
         const btnUndo = document.getElementById('btnUndo')
+        const btnActualizacion = document.getElementById('btnActualizacion')
         const tituloEncabezado = document.getElementById('encabezado')
         const inputEncabezado = document.getElementById('inputEncabezado')
+        const tituloAnterior=tituloEncabezado
+        
+       // btnUndo.addEventListener("click",callback())
+        var contador=0
 
         function modificarEncabezado() {
-            /* Tu código aquí */
+            
+            btnActualizacion.addEventListener("click",almacenar())
+            if(validar()===true){
+              // tituloAnterior.innerHTML=tituloEncabezado.innerHTML
+
+                tituloEncabezado.textContent=inputEncabezado.value
+                contador=contador+1
+                console.log(contador)
+            if(contador>=2){
+                btnUndo.removeAttribute('disabled')
+               }
+            }
+          
+        }
+        function callback1(){
+          // tituloEncabezado.textContent=tituloAnterior.innerHTML
+          tituloEncabezado.textContent =tituloAnterior.innerHTML
+           console.log("ya se ejecuto")
+        }
+
+        function validar() {
+           
+             if (inputEncabezado.value.trim() === "") {
+                 alert('El encabezado esta vacio');
+             return false;
+            }
+
+            else return true;
+        }
+        function almacenar(){
+            tituloAnterior.innerHTML=tituloEncabezado.innerHTML
+            console.log("titulo anterior "+tituloAnterior.innerHTML)
+            
+        }
         }
     </script>
 </body>
