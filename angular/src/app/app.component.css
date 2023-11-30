@@ -123,7 +123,7 @@ h3::before {
 }
 
 .directivas .pokemons div::before {
-  content: '👾 ';
+  content: '';
 }
 
 .directivas .pokemons div {
